@@ -22,6 +22,9 @@ body a{
 h1,h2,h3,h4,h5,h6,label,p{
 	margin:0;	
 }
+.row{
+    margin-left: 3px;
+}
 /*----*/
 .itemContainer{
 			width:100%;
@@ -553,6 +556,11 @@ padding:4em 0;
 	background:#fff;
 	padding:2em;
 }
+
+.col-product-button:hover span.white{
+    background: #8fbf00;
+}
+
 .col-in-left{
 	float:left;
 }
@@ -600,7 +608,10 @@ ul.star {
   padding: 1em 0;
 }
 .col-best {
-  padding: 3em 0;
+  padding-top: 2rem;
+    .row {
+    margin-left: 3px;
+    }
 }
 .latter {
   margin-top: 4px;
@@ -690,6 +701,7 @@ ul.star {
 .footer{
 	background:#fff;
 	padding:3em 0;
+    margin-top: 3rem;
 }
 .footer-right ul li{
 	display:inline-block;
@@ -2120,4 +2132,7 @@ a.order {
 #owl-demo .item {
   width: 78% !important;
 }
+}
+.col-product{
+    background-color: #ffffff;
 }
