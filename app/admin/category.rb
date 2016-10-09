@@ -13,6 +13,6 @@ ActiveAdmin.register Category do
 #   permitted
 # end
 
-  permit_params  :category_name, :parent_id, :is_active, :product_type_id
+  permit_params  :name, :parent_id, :is_active, :product_type_id
 
 end

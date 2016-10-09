@@ -56,21 +56,13 @@ ActiveRecord::Schema.define(version: 20161009073213) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "category_name"
-    t.integer  "parent_id"
+    t.string   "name"
+    t.integer  "parent_id",       default: 0
     t.boolean  "is_active",       default: true
     t.integer  "product_type_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.index ["product_type_id"], name: "index_categories_on_product_type_id", using: :btree
-  end
-
-  create_table "image_attachments", force: :cascade do |t|
-    t.integer  "attached_item_id"
-    t.string   "attached_item_type"
-    t.string   "image",              null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
   end
 
   create_table "product_types", force: :cascade do |t|
@@ -81,14 +73,17 @@ ActiveRecord::Schema.define(version: 20161009073213) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "product_name"
+    t.string   "name"
     t.string   "sku"
-    t.string   "product_description"
+    t.string   "description"
+    t.string   "price"
     t.integer  "category_id"
-    t.boolean  "is_active",           default: true
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.integer  "brand_id"
+    t.boolean  "is_active",   default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "image"
+    t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
 
