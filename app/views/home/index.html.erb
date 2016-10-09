@@ -1,23 +1,26 @@
-<%@products.each_with_index do |product, index|%>
 <div class="row col-best">
+<%@products.each_with_index do |product, index|%>
   <div class="col-md-4 ">
     <div class="col-product row">
     <div class="col-md-5">
-    <img src="assets/inverter.jpg" class="img-responsive" width="175" alt="">
+    <img src="<%=product.image%>" class="img-responsive" width="175" alt="">
       </div>
     <div class="col-md-7">
-      <strong>INVERTER MODEL & CAP 650 VA SHINY</strong>
-        <p>Battery Qty : 1 NO</p>
-      <p>Load : 3 Lights, 3 Fans, 1 TV</p>
+      <strong><%= product.name%></strong>
+        <p>SKU : <%= product.sku%></p>
+      <p>Description :  <%= product.description%></p>
       <div class="col-product-button">
       <a href="#" class="item_add">
-        <span class="white item_price">Rs. 12345 <i> </i> </span>
+        <span class="white item_price"><%= product.price%><i> </i> </span>
       </a>
         </div>
     </div>
     </div>
   </div>
-</div>
+      <%if (index+1) % 3 == 0 %>
+          </div>
+          <div class="row col-best">
+      <%end%>
 <%end%>
 
 
