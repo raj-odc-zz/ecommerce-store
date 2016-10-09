@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  belongs_to :product_type
   belongs_to :category
+  mount_uploader :image, PdImageUploader
 end
