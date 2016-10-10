@@ -58,7 +58,7 @@
     <div class="container">
       <div class="head-top">
         <div class="logo">
-          <a href="#"><img src="assets/logo.png" alt="" ></a>
+          <a href="#"><img src="<%= asset_path('logo.png') %>" alt="" ></a>
         </div>
         <div class="top-nav">
           <ul class="megamenu skyblue">
@@ -170,9 +170,9 @@
           <a href="#">
             <h3> <div class="total">
               <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-              <img src="assets/cart.png" alt=""/></h3>
+              <%= image_tag('cart.png')%></h3>
           </a>
-          <p><a href="javascript:;" class="simpleCart_empty"><img src="assets/cart-c.png"  alt=""></a></p>
+          <p><a href="javascript:;" class="simpleCart_empty"><%= image_tag('cart-c.png')%></a></p>
           <div class="clearfix"> </div>
         </div>
 
